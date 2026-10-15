@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.app3.databinding.ActivityGameBinding
 import com.example.app3.databinding.GameBinding
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -49,7 +50,9 @@ class GameActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch {
             val game = api.getGame(id)
             CoroutineScope(Dispatchers.Main).launch {
+                Picasso.get().load(game.thumbnail).into(binding.thumbnail)
                 binding.title.text = game.title
+                binding.genre.text = game.genre
                 binding.platform.text = game.platform
                 binding.releaseDate.text = game.release_date
             }

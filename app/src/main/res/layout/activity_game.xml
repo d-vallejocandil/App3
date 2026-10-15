@@ -13,18 +13,46 @@
         android:orientation="vertical"
         android:padding="20dp">
 
-        <TextView
-            android:id="@+id/title"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.CardView.Elevated"
+            android:layout_gravity="center"
+            android:layout_margin="25dp">
+
+                <ImageView
+                    android:id="@+id/thumbnail"
+                    android:layout_width="160dp"
+                    android:layout_height="90dp"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style="@style/Widget.Material3.CardView.Filled">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/platform"
+            android:id="@+id/genre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/release_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/platform"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
