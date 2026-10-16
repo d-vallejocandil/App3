@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         }
         supportActionBar?.title = "Home"
         gameAdapter = GameAdapter(games) {
-            val game = games[it]
+            val game = games2[it]
             val intent = Intent(this, GameActivity::class.java)
             intent.putExtra("GAME", game.id)
             startActivity(intent)

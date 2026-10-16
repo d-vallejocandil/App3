@@ -8,5 +8,8 @@ data class Game(
     val thumbnail: String,
     val genre: String,
     val platform: String,
-    val release_date: String
+    val release_date: String,
+    val description: String?,
+    val minimum_system_requirements: MinimumSystemRequirements?,
+    val screenshots: List<Screenshot>?
 )
