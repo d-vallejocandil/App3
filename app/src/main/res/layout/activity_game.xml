@@ -167,6 +167,7 @@
                     android:textStyle="bold"
                     android:padding="5dp"/>
 
+
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
@@ -174,11 +175,28 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.Material3.CardView.Outlined">
 
-                <TextView
-                    android:id="@+id/description"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:padding="5dp"/>
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="5"/>
+
+                    <TextView
+                        android:id="@+id/more"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="More..."
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 

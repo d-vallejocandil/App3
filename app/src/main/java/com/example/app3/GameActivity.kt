@@ -22,6 +22,7 @@ class GameActivity : AppCompatActivity() {
     val api = Api.get()
     lateinit var binding: ActivityGameBinding
     lateinit var screenshotAdapter: ScreenshotAdapter
+    var more = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -62,6 +63,16 @@ class GameActivity : AppCompatActivity() {
                 screenshotAdapter = ScreenshotAdapter(screenshots)
                 binding.recycler.adapter = screenshotAdapter
                 binding.description.text = game.description
+                binding.more.setOnClickListener {
+                    if (more) {
+                        binding.description.maxLines = 5
+                        binding.more.text = "More..."
+                    } else {
+                        binding.description.maxLines = Int.MAX_VALUE
+                        binding.more.text = "Less..."
+                    }
+                    more = !more
+                }
                 binding.os.text = game.minimum_system_requirements!!.os
                 binding.processor.text = game.minimum_system_requirements!!.processor
                 binding.memory.text = game.minimum_system_requirements!!.memory
