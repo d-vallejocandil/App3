@@ -47,4 +47,5 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:$version")
     implementation("com.squareup.retrofit2:converter-gson:$version")
     implementation("com.squareup.picasso:picasso:2.8")
+    implementation("io.getstream:photoview:1.0.3")
 }

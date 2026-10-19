@@ -359,8 +359,42 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"/>
+
         </LinearLayout>
 
     </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/colorSurfaceVariant">
+
+        <Button
+            android:id="@+id/play"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/play_arrow_24px"/>
+        
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/share"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/share_24px" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

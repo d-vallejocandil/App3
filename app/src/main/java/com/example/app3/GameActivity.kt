@@ -8,6 +8,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -78,6 +79,18 @@ class GameActivity : AppCompatActivity() {
                 binding.memory.text = game.minimum_system_requirements!!.memory
                 binding.graphics.text = game.minimum_system_requirements!!.graphics
                 binding.storage.text = game.minimum_system_requirements!!.storage
+                binding.play.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_VIEW)
+                    intent.setData(game.game_url.toUri())
+                    startActivity(intent)
+                }
+                binding.share.setOnClickListener {
+                    val intent = Intent(Intent.ACTION_SEND)
+                    intent.putExtra(Intent.EXTRA_TEXT, game.game_url)
+                    intent.setType("text/plain")
+                    val activity = Intent.createChooser(intent, null)
+                    startActivity(activity)
+                }
             }
         }
     }

@@ -6,6 +6,7 @@ data class Game(
     val id: Int,
     val title: String,
     val thumbnail: String,
+    val game_url: String,
     val genre: String,
     val platform: String,
     val release_date: String,
